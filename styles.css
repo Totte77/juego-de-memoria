@@ -1,0 +1,164 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title Styles */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Game Info Section */
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.game-info div {
+    text-align: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.game-info span {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.flipped .card-front {
+    transform: rotateY(0deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    pointer-events: none;
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+/* Card Faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Back */
+.card-back {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    font-size: 24px;
+    transform: rotateY(0deg);
+}
+
+/* Card Front */
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Start Button */
+#start-button {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#start-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Timer Styling (optional) */
+.timer {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
